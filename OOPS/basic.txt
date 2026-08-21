@@ -1,0 +1,58 @@
+CPP
+---
+C - procedural Oriented Programming language (function)
+cpp - procedural and object oriented  
+OOPS  
+
+Object is instance of class
+class is blueprint of object 
+
+struct vs class
+ 
+class -- data members / properties / variables + member function / behaviour / methods + access specifier
+
+OOPS
+----
+1. Encapsulation -- getter and setter 
+2. inheritance 
+3. Abstraction 
+4. polymorphism
+
+constructor 
+friend function
+
+static 
+this
+<======================================>
+CPP
+---
+cout <<
+cin >>
+
+cout << "My age is" << age<<endl;
+
+cin >> A >> B;
+
+string 
+bool 
+
+
+
+#include<iostream>
+#include<iostream.h>
+
+
+using namespace std;
+cout << "This is Cout";
+
+:: -> scope resolution
+
+.
+->
+
+<================================================>
+Access Specifier 
+----------------
+1. Private -- accessible only in class (default)
+2. protected -- accessible  within class and inherited class 
+3. public -- accessible everywhere 

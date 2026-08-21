@@ -1,0 +1,20 @@
+Class 
+Object / Instance
+
+Constructor 
+    Default 
+    Parameterized 
+    copy 
+
+
+keyword 
+    this -> points to current object 
+
+
+Static
+destructor  
+friend
+inline function 
+
+encapsulation -- getter and setter
+inheritance 
