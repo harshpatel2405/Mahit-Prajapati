@@ -10,11 +10,27 @@ Constructor
 keyword 
     this -> points to current object 
 
-
+<===================================================>
 Static
+------
+-> Keyword 
+-> for every function call , it will share same memory location 
+-> related to a particular function or class
+=> it is related to class not objects 
+<===================================================>
 destructor  
-friend
+-> destroys the object 
+-> releases any occupied resource / close the connection 
+<===================================================>
+friend Function 
+-> keyword 
+-> gets the data of even the private members of class 
+-> syntax In Class : friend returnType functionName(args)
+-> syntax Function Definition : returnType functionName(args){}
+<===================================================>
 inline function 
+-> 
+<===================================================>
 
 encapsulation -- getter and setter
 inheritance 

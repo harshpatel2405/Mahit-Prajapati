@@ -56,3 +56,15 @@ Access Specifier
 1. Private -- accessible only in class (default)
 2. protected -- accessible  within class and inherited class 
 3. public -- accessible everywhere 
+
+<=======================================>
+Class => BLueprint for object 
+      => mostly virtual
+Object => Instance of class (class variable occupying memory)
+       => mostly Physical
+Constructor => a special method 
+            => no return type , name same as class name 
+            => Default , Parameterized , copy 
+            => gets called as soon as the object is created 
+
+Static => 
