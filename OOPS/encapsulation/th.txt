@@ -1,0 +1,273 @@
+ENCAPSULATION IN C++
+
+Definition:
+Encapsulation is the process of wrapping data members and member functions together inside a single unit called a class.
+
+It also means restricting direct access to the internal data of an object and providing controlled access through public functions.
+
+Example:
+
+class Student
+{
+private:
+    int marks;
+
+public:
+    void setMarks(int m)
+    {
+        if(m >= 0 && m <= 100)
+            marks = m;
+    }
+
+    int getMarks()
+    {
+        return marks;
+    }
+};
+
+Here:
+- marks is private, so it cannot be accessed directly from outside the class.
+- setMarks() is used to modify marks.
+- getMarks() is used to read marks.
+- The class Student encapsulates data and functions together.
+
+
+WHY DO WE NEED ENCAPSULATION?
+
+1. Data Hiding
+   Prevents direct access to important data.
+
+2. Data Security
+   Prevents invalid or unwanted changes to data.
+
+3. Controlled Access
+   Data can be accessed or modified through specific functions.
+
+4. Validation
+   We can check data before storing it.
+
+5. Maintainability
+   Internal implementation can be changed without affecting outside code.
+
+
+DATA HIDING:
+
+Data hiding means restricting direct access to the internal data of a class.
+
+Example:
+
+class Bank
+{
+private:
+    double balance;
+};
+
+Bank b;
+b.balance = 5000;       // ERROR
+
+Because balance is private.
+
+
+ACCESS SPECIFIERS:
+
+C++ has three main access specifiers:
+
+1. private
+   - Accessible only inside the class.
+   - Used mainly for data hiding.
+   - Default access specifier in a class.
+
+2. public
+   - Accessible from anywhere through an object.
+   - Used to provide controlled access to private data.
+
+3. protected
+   - Accessible inside the class and derived classes.
+   - Not directly accessible through an object.
+
+
+GETTER:
+
+A getter is a function used to read/access private data.
+
+Example:
+
+int getMarks()
+{
+    return marks;
+}
+
+
+SETTER:
+
+A setter is a function used to modify/change private data.
+
+Example:
+
+void setMarks(int m)
+{
+    if(m >= 0 && m <= 100)
+        marks = m;
+}
+
+
+ENCAPSULATION USING GETTER AND SETTER:
+
+class Student
+{
+private:
+    int marks;
+
+public:
+    void setMarks(int m)
+    {
+        if(m >= 0 && m <= 100)
+            marks = m;
+    }
+
+    int getMarks()
+    {
+        return marks;
+    }
+};
+
+Usage:
+
+Student s;
+
+s.setMarks(90);
+cout << s.getMarks();
+
+We cannot do:
+
+s.marks = 90;       // ERROR
+
+
+PRIVATE MEMBER FUNCTIONS:
+
+Encapsulation can also hide functions.
+
+class Bank
+{
+private:
+    void calculateInterest()
+    {
+        cout << "Interest calculated";
+    }
+
+public:
+    void display()
+    {
+        calculateInterest();
+    }
+};
+
+calculateInterest() cannot be called directly from outside the class.
+
+
+ENCAPSULATION AND CONSTRUCTOR:
+
+A constructor can initialize private data when an object is created.
+
+class Student
+{
+private:
+    int marks;
+
+public:
+    Student(int m)
+    {
+        if(m >= 0 && m <= 100)
+            marks = m;
+        else
+            marks = 0;
+    }
+};
+
+
+ADVANTAGES OF ENCAPSULATION:
+
+- Provides data hiding.
+- Provides controlled access.
+- Protects data from unwanted changes.
+- Allows validation.
+- Improves security.
+- Makes code easier to maintain.
+- Reduces dependency between different parts of a program.
+
+
+ENCAPSULATION VS DATA HIDING:
+
+Encapsulation:
+Wrapping data and functions together inside a class.
+
+Data Hiding:
+Restricting direct access to internal data.
+
+Data hiding is one of the important techniques used to achieve encapsulation.
+
+
+ENCAPSULATION VS ABSTRACTION:
+
+Encapsulation:
+Focuses on wrapping data and methods together and controlling access.
+
+Abstraction:
+Focuses on hiding unnecessary implementation details and showing only essential functionality.
+
+Example:
+
+BankAccount:
+private:
+    balance;
+
+public:
+    withdraw();
+
+Encapsulation -> balance is protected using private.
+Abstraction -> user only needs to call withdraw(), without knowing its internal implementation.
+
+
+REAL-WORLD EXAMPLE:
+
+Consider a bank account.
+
+We should not allow:
+
+account.balance = -5000;
+
+Instead:
+
+account.deposit(5000);
+account.withdraw(1000);
+account.getBalance();
+
+The balance remains private and can only be accessed through controlled functions.
+
+
+IMPORTANT POINTS TO REMEMBER:
+
+1. Encapsulation = Data + Functions + Controlled Access.
+
+2. Encapsulation is mainly achieved using classes and access specifiers.
+
+3. private is commonly used for data hiding.
+
+4. Getters are used to read private data.
+
+5. Setters are used to modify private data.
+
+6. Setters can be used for validation.
+
+7. Encapsulation does NOT mean only making variables private.
+
+8. Member functions can also be private.
+
+9. Encapsulation improves security, maintainability, and control.
+
+10. Encapsulation and abstraction are related but different concepts.
+
+
+ONE-LINE DEFINITION FOR EXAM:
+
+"Encapsulation is an OOP concept of wrapping data and functions together inside a class and restricting direct access to the data using access specifiers."

@@ -1,0 +1,164 @@
+C++ CODING QUESTIONS
+Topics: Class & Object, Constructor, Static, Friend, Destructor, Inline Function, Encapsulation
+<=========================================================================================>
+QUESTION 1 — STUDENT RESULT SYSTEM
+
+Create a C++ program for managing student results.
+
+Requirements:
+
+1. Create a class Student with private data members:
+   - name
+   - rollNo
+   - marks1
+   - marks2
+   - marks3
+
+2. Use a parameterized constructor to initialize all student details.
+3. Create an inline function calculateTotal() that returns the total marks.
+4. Create an inline function calculatePercentage() that returns the percentage.
+5. Apply encapsulation:
+   - Keep all data members private.
+   - Create appropriate getter functions.
+   - Do not directly access data members from main().
+
+6. Create a static data member studentCount that keeps track of how many Student objects have been created.
+7. Create a static member function getStudentCount() to display the number of students.
+8. Create a friend function compareMarks(Student, Student) that compares the total marks of two students and displays who scored higher.
+
+9. Create a destructor that displays:
+
+Student object destroyed: <name>
+
+10. In main():
+- Create at least 3 Student objects.
+- Display their details, total and percentage.
+- Compare two students using the friend function.
+- Display the total number of students using the static function.
+
+<=========================================================================================>
+
+QUESTION 2 — BANK ACCOUNT
+
+Create a C++ program to simulate a simple bank account system.
+
+Requirements:
+
+1. Create a class BankAccount with private data members:
+   - accountNumber
+   - holderName
+   - balance
+
+2. Use a parameterized constructor to initialize account details.
+
+3. Create the following public functions:
+
+   void deposit(double amount);
+   void withdraw(double amount);
+   void display();
+
+4. Apply encapsulation:
+   - balance must be private.
+   - The balance should only be changed through deposit() and withdraw().
+   - Do not allow withdrawal if the amount is greater than the balance.
+
+5. Create an inline function:
+
+   inline double getBalance();
+
+   It should return the current balance.
+
+6. Create a static data member totalAccounts that counts how many BankAccount objects have been created.
+
+7. Create a static function:
+
+   static void showTotalAccounts();
+
+   It should display the total number of accounts.
+
+8. Create a friend function:
+
+   friend void compareBalance(BankAccount, BankAccount);
+
+   It should compare the balances of two accounts and display which account has a higher balance.
+
+9. Create a destructor that displays:
+
+Account <accountNumber> destroyed
+
+10. In main():
+   - Create 3 BankAccount objects.
+   - Deposit money into different accounts.
+   - Withdraw money from at least one account.
+   - Display account details.
+   - Compare two accounts using the friend function.
+   - Display total accounts.
+   
+   
+<=========================================================================================>
+QUESTION 3 — PRODUCT MANAGEMENT SYSTEM
+   
+Create a C++ program to manage products in a shop.
+
+Requirements:
+
+1. Create a class Product with private data members:
+   - productId
+   - productName
+   - price
+   - quantity
+
+2. Use a parameterized constructor to initialize product details.
+
+3. Create an inline function:
+
+   inline double getTotalPrice();
+
+   It should return:
+
+   price × quantity
+
+4. Apply encapsulation:
+   - All data members must be private.
+   - Create getter functions to access required information.
+   - Create a setter for price.
+   - The setter should reject a negative price.
+
+5. Create a static data member:
+
+   static int productCount;
+
+   It should count the number of Product objects created.
+
+6. Create a static member function:
+
+   static void showProductCount();
+
+7. Create a friend function:
+
+   friend void compareProducts(Product, Product);
+
+   It should compare the total price of two products and display which product has the greater total value.
+
+8. Create a destructor that displays:
+
+   Product <productName> destroyed
+
+9. In main():
+   - Create at least 3 Product objects.
+   - Display their product details.
+   - Display total price for each product.
+   - Change the price of one product using the setter.
+   - Compare two products using the friend function.
+   - Display the total number of products using the static function.
+
+<=========================================================================================>
+
+DIFFICULTY:
+
+Question 1 → Medium
+Question 2 → Medium+
+Question 3 → Medium/Hard
+
+Recommended order:
+Q1 → Q2 → Q3
