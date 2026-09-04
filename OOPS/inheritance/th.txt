@@ -1,0 +1,46 @@
+Inheritance
+-----------
+Inheritance is an OOP concept where one class gets the properties and methods of another class.
+
+👉 The existing class is called the Parent/Superclass/BaseClass.
+👉 The new class is called the Child/Subclass/DerivedClass.
+
+Advantages of Inheritance ✅
+--------------------------
+a. Code Reusability           => We can reuse existing code.
+b. Less Code                  => No need to write the same methods again.
+c. Easy Maintenance           => Changes in the parent class can be available to child classes.
+d. Supports Method Overriding => Child classes can provide their own implementation.
+e. Supports Polymorphism      => Helps achieve runtime polymorphism.
+
+Disadvantages of Inheritance ❌
+----------------------------
+a. Tight Coupling      => Child and parent classes become highly dependent on each other.
+b. Difficult to Change => Changes in the parent class may affect child classes.
+c. Can Become Complex  => Too much inheritance can make a program difficult to understand.
+d. Not Always Reusable => Sometimes composition is a better choice than inheritance.
+
+<===================================================>
+Syntax 
+------
+Class A 
+{
+    variable1 , variable2;
+}
+
+class B : acces_specifier A
+{
+    void methodName()
+    {
+        cout <<variable1;
+    }
+}
+<================================================>
+Types 
+-----
+1. Single Inheritance          => single parent , single child
+2. MultiLevel Inheritance      => Grandfather -> father -> You
+3. Multiple Inheritance        => multiple parents , single child
+4. Hierarchical Inheritance    => Single Parents , Multiple Child 
+5. Hybrid Inheritance          => mostly (Multiple and Hierarchical)
+<=================================================>

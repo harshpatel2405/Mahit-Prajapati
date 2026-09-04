@@ -1,0 +1,127 @@
+<=============================================================>
+Q1. Employee Salary System
+
+Create a parent class Employee with:
+- name
+- employeeId
+- basicSalary
+
+Create a child class Manager that inherits from Employee and has:
+- bonus
+- calculateSalary() → returns basicSalary + bonus
+
+Task:
+1. Accept employee details from the user.
+2. Accept the bonus.
+3. Display employee information and total salary.
+
+<=============================================================>
+Q2. Vehicle Rental System
+
+Create a parent class Vehicle with:
+- vehicleNumber
+- brand
+- rentPerDay
+
+Create a child class Car with:
+- numberOfDays
+- calculateRent() → rentPerDay × numberOfDays
+
+Task:
+Display the vehicle details and total rental amount.
+
+Extra Condition:
+If the rental is for more than 7 days, give a 10% discount.
+
+<=============================================================>
+Q3. Student Result System
+
+Create a parent class Student with:
+- name
+- rollNo
+- marks1
+- marks2
+
+Create a child class Result with:
+- marks3
+- calculateTotal()
+- calculatePercentage()
+- displayResult()
+
+Task:
+Display:
+
+Name:
+Roll No:
+Total Marks:
+Percentage:
+Result: Pass/Fail
+
+A student passes only if all three subjects have marks >= 35.
+
+<=============================================================>
+Q4. Bank Account System
+
+Create a parent class BankAccount with:
+- accountNumber
+- accountHolder
+- balance
+
+Functions:
+- deposit()
+- displayBalance()
+
+Create a child class SavingsAccount with:
+- interestRate
+
+Add a function:
+calculateInterest()
+
+Formula:
+Interest = balance × interestRate / 100
+
+Task:
+1. Create an account.
+2. Deposit money.
+3. Calculate interest.
+4. Add the interest to the balance.
+5. Display the final balance.
+
+Condition:
+If the balance is below Rs. 5,000, don't provide interest.
+
+<=============================================================>
+Q5. Hospital Billing System
+
+Create a parent class Patient with:
+- patientName
+- patientId
+- daysAdmitted
+
+Create a child class InPatient with:
+- roomChargePerDay
+- doctorFee
+- medicineCharge
+
+Create functions:
+- calculateRoomCharge()
+- calculateTotalBill()
+- displayBill()
+
+Formula:
+
+Room Charge = daysAdmitted × roomChargePerDay
+
+Total Bill = Room Charge + doctorFee + medicineCharge
+
+Additional Conditions:
+
+1. If the patient stays for more than 10 days, give a 15% discount on the room charge.
+
+2. If the final bill is more than Rs. 50,000, display:
+Premium Patient
+
+Otherwise display:
+Regular Patient
+
+<=============================================================>
