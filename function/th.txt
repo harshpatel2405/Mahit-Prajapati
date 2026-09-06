@@ -1,0 +1,52 @@
+1. Default args
+2. Function Overloading -- same name , different paramters (by number , by data type)
+3. inline functions
+4. Pass by reference 
+5. Const reference
+6. auto
+7. Templates
+8. Lambda
+
+scope
+-----
+1. local scope  
+-> within the block {}   automatic(auto) variables -- gets destoyed once the work/block is completed 
+
+2. global scope 
+-> throghout the program and for everyone
+-> same memory for complete program 
+-> destroys once the program is completed 
+
+-- static -- same memory for a particular function/block
+          -- destroys once the program is completed 
+
+
+auto
+----
+automatic
+define type of data on its own 
+
+auto divide(double a ,double b)
+{
+    return a/b;
+}
+
+here auto will make it double 
+
+
+templates
+---------
+addition -> number A , number B 
+         -> number > int , float , double, long int
+
+    Hierarchy : int , long int , float , double
+
+            int -> int , float , double , long int
+            float -> int , float , double, long int 
+            double -> int , float , double, long int 
+            long int  -> int , float , double, long int 
+
+templates
+---------
+1. typename  -- modern (normal datatypes , class)
+2. class     -- old (class)
