@@ -7,6 +7,7 @@
 7. Templates
 8. Lambda
 
+<===================================================>
 scope
 -----
 1. local scope  
@@ -18,9 +19,9 @@ scope
 -> destroys once the program is completed 
 
 -- static -- same memory for a particular function/block
-          -- destroys once the program is completed 
+-- destroys once the program is completed 
 
-
+<===================================================>
 auto
 ----
 automatic
@@ -33,20 +34,93 @@ auto divide(double a ,double b)
 
 here auto will make it double 
 
-
+<===================================================>
 templates
 ---------
 addition -> number A , number B 
-         -> number > int , float , double, long int
+-> number > int , float , double, long int
 
-    Hierarchy : int , long int , float , double
+Hierarchy : int , long int , float , double
 
-            int -> int , float , double , long int
-            float -> int , float , double, long int 
-            double -> int , float , double, long int 
-            long int  -> int , float , double, long int 
+int -> int , float , double , long int
+float -> int , float , double, long int 
+double -> int , float , double, long int 
+long int  -> int , float , double, long int 
 
 templates
 ---------
 1. typename  -- modern (normal datatypes , class)
+    template <typename T>
 2. class     -- old (class)
+    template <class T>
+
+<===================================================>
+Lambda
+------
+Lambda (anonymous function) 
+short function which can be created any time 
+can be created inside other function or outside main function
+
+Syntax :: 
+[capture] (parameters) {
+    // code
+};
+
+Example :: 
+auto add = [](int a, int b) {
+    return a + b;
+};
+cout << add(10, 20);
+
+Capture List ::
+=-=-=-=--=-=
+int x = 10;
+auto show = [x]() {
+    cout << x;
+};
+show();
+
+[x]       // capture x
+[&x]      // capture x by reference
+[=]       // capture all required outside variables by value
+[&]       // capture all required outside variables by reference
+[]        // capture nothing
+<===================================================>
+HOF
+---
+Higher Order Function
+1. function being passed as an args 
+2. Function Returning from a function
+
+<===================================================>
+FUNCTIONS
+│
+├── Function Basics
+│   ├── Declaration
+│   ├── Definition
+│   ├── Calling
+│   └── Parameters / Return
+│
+├── Parameter Concepts
+│   ├── Pass by Value
+│   ├── Pass by Reference
+│   └── Const Reference
+│
+├── Function Features
+│   ├── Default Arguments
+│   ├── Function Overloading
+│   └── Inline Functions
+│
+├── Modern C++
+│   ├── auto
+│   ├── Templates
+│   └── Lambda
+│       └── Capture List
+│
+├── Advanced Function Concepts
+│   ├── Function Pointer
+│   └── HOF
+│       ├── Function as Argument
+│       └── Function/Lambda as Return
+│
+└── Recursion
