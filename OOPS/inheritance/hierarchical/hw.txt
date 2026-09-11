@@ -1,0 +1,265 @@
+C++ PRACTICAL - HARD LEVEL
+HIERARCHICAL INHERITANCE
+
+REAL-WORLD PROBLEM: FOOD DELIVERY MANAGEMENT SYSTEM
+
+A food delivery company wants to develop a system to manage different types of users.
+
+The system has two types of users:
+
+1. Delivery Partner
+2. Customer
+
+Both are users of the same food delivery platform, so they should inherit common information from a base class called User.
+
+BASE CLASS: User
+
+Data Members:
+
+* name
+* userId
+* phone
+* accountActive
+
+Methods:
+
+* activateAccount() -> Activate the user's account.
+* deactivateAccount() -> Deactivate the user's account.
+* showUser() -> Display name, user ID, phone and account status.
+* isAccountActive() -> Return whether the account is active.
+
+DERIVED CLASS 1: Customer
+
+Inherit from User.
+
+Additional Data Members:
+
+* address
+* walletBalance
+* totalOrders
+* pendingOrder
+
+Methods:
+
+1. addMoney(double amount)
+
+Add the given amount to the customer's wallet.
+
+The amount must be greater than 0.
+
+2. placeOrder(double amount)
+
+Place an order only when:
+
+* The customer account is active.
+* The order amount is greater than 0.
+* The customer has sufficient wallet balance.
+* The customer does not already have a pending order.
+
+If all conditions are satisfied:
+
+* Deduct the order amount from wallet balance.
+* Increase totalOrders by 1.
+* Set pendingOrder to true.
+
+3. cancelOrder()
+
+Cancel the current pending order.
+
+If an order is pending:
+
+* Set pendingOrder to false.
+* Refund the order amount to the wallet.
+
+If there is no pending order, display an appropriate message.
+
+4. showCustomer()
+
+Display:
+
+* Customer name
+* Address
+* Wallet balance
+* Total orders
+* Pending order status
+
+DERIVED CLASS 2: DeliveryPartner
+
+Inherit from User.
+
+Additional Data Members:
+
+* vehicleNumber
+* available
+* deliveriesCompleted
+* currentDelivery
+
+Methods:
+
+1. goAvailable()
+
+Set the delivery partner as available.
+
+2. goUnavailable()
+
+Set the delivery partner as unavailable.
+
+3. acceptDelivery()
+
+Accept a delivery only when:
+
+* Account is active.
+* Delivery partner is available.
+* There is no current delivery.
+
+If accepted:
+
+* Set currentDelivery to true.
+* Set available to false.
+
+4. completeDelivery()
+
+Complete the current delivery.
+
+If a delivery is active:
+
+* Set currentDelivery to false.
+* Set available to true.
+* Increase deliveriesCompleted by 1.
+
+5. showDeliveryPartner()
+
+Display:
+
+* Partner name
+* Vehicle number
+* Availability
+* Current delivery status
+* Total deliveries completed
+
+IMPORTANT BUSINESS RULES
+
+Customer:
+
+1. An inactive customer cannot place an order.
+2. Wallet balance cannot become negative.
+3. Customer cannot place another order while one order is pending.
+4. Customer can cancel only a pending order.
+5. Adding money with 0 or negative amount is not allowed.
+
+Delivery Partner:
+
+6. An inactive delivery partner cannot accept a delivery.
+7. An unavailable delivery partner cannot accept a delivery.
+8. A delivery partner cannot accept another delivery while already delivering.
+9. A delivery partner becomes unavailable automatically when accepting a delivery.
+10. A delivery partner becomes available automatically after completing a delivery.
+
+CONSTRUCTORS
+
+Use constructors in all classes to initialize the required data members.
+
+Do not create simple get() and set() methods.
+
+REQUIRED RETURN-VALUE METHODS
+
+Use at least TWO methods that return values.
+
+For example:
+
+* isAccountActive()
+* hasPendingOrder()
+* isAvailable()
+* canAcceptDelivery()
+
+MAIN PROGRAM
+
+Create at least:
+
+* One Customer object
+* One DeliveryPartner object
+
+Perform the following operations:
+
+1. Display customer information.
+2. Display delivery partner information.
+3. Try placing an order before activating the customer account.
+4. Activate the customer account.
+5. Add money to the customer's wallet.
+6. Place an order.
+7. Try placing another order without cancelling the first order.
+8. Activate the delivery partner account.
+9. Make the delivery partner available.
+10. Accept the delivery.
+11. Try accepting another delivery.
+12. Complete the delivery.
+13. Cancel the customer's pending order.
+14. Display the final customer status.
+15. Display the final delivery partner status.
+
+INHERITANCE STRUCTURE
+
+```
+                 User
+                /    \
+               /      \
+              /        \
+         Customer    DeliveryPartner
+```
+
+ADDITIONAL CHALLENGE
+
+Add a method in Customer:
+
+void applyCoupon(double percentage)
+
+The coupon should be applied only when:
+
+* Customer account is active.
+* An order is pending.
+* Percentage is between 1 and 50.
+
+The discount should be applied to the pending order amount.
+
+The discounted amount should be reflected when the order is cancelled and refunded.
+
+EXTRA CHALLENGE
+
+Add a method in DeliveryPartner:
+
+double calculateEarnings(double amount)
+
+The delivery partner receives 10% of the delivery amount as earnings.
+
+Return the calculated earning.
+
+Display the earning after completing a delivery.
+
+RESTRICTIONS
+
+1. Must use Hierarchical Inheritance.
+2. Customer and DeliveryPartner must inherit from User.
+3. Use constructors.
+4. Use private/protected access appropriately.
+5. Do not use simple getters/setters.
+6. Use methods for all important operations.
+7. Use at least two methods that return values.
+8. Do not use global variables.
+9. Validate all important inputs.
+10. Demonstrate successful and unsuccessful operations in main().
+11. The program should clearly show how the two derived classes have different behaviors while sharing common functionality from User.
+
+GOAL
+
+Build a realistic Food Delivery Management System where:
+
+User
+|
++---- Customer
+|
++---- DeliveryPartner
+
+Both Customer and DeliveryPartner share common user functionality, but each performs completely different operations according to their real-world role.
+
+TIME LIMIT: 25-30 MINUTES
+DIFFICULTY: HARD
