@@ -1,0 +1,142 @@
+C++ PRACTICAL QUESTION: SMART TV SYSTEM
+
+Create a C++ program to implement a Smart TV System using Multiple Inheritance.
+
+CLASS 1: Television
+
+Data Members:
+
+* brand
+* screenSize
+* volume
+* powerStatus
+
+Methods:
+
+* turnOn() -> Turn the TV ON.
+* turnOff() -> Turn the TV OFF.
+* increaseVolume() -> Increase volume by 5.
+* decreaseVolume() -> Decrease volume by 5. Volume should not go below 0.
+* showTVInfo() -> Display brand, screen size, volume, and power status.
+
+CLASS 2: StreamingDevice
+
+Data Members:
+
+* currentApp
+* internetConnected
+* subscriptionActive
+
+Methods:
+
+* connectInternet() -> Connect the TV to the internet.
+* openApp(string app) -> Open an app only if internet is connected.
+* closeApp() -> Close the currently opened app.
+* checkSubscription() -> Display whether the subscription is active.
+
+CLASS 3: SmartTV
+
+Inherit from both Television and StreamingDevice using protected inheritance.
+
+class SmartTV : protected Television, protected StreamingDevice
+
+Add the following Data Members:
+
+* channel
+* brightness
+* voiceControl
+* watchTime
+
+SMART TV METHODS
+
+1. changeChannel(int channelNo)
+
+Change the channel only when the TV is ON.
+
+2. adjustBrightness(int value)
+
+Increase or decrease brightness according to the given value.
+
+Brightness must remain between 0 and 100.
+
+3. enableVoiceControl()
+
+Enable voice control.
+
+4. watchContent(int minutes)
+
+Increase watchTime by the given number of minutes.
+
+If the TV is OFF, display:
+
+TV is OFF
+
+5. smartStatus()
+
+Display the complete current status of the Smart TV.
+
+Example:
+
+--- Smart TV Status ---
+
+Brand: Sony
+Screen Size: 55 inch
+Power: ON
+Volume: 35
+Channel: 12
+Brightness: 80
+Internet: Connected
+Current App: Netflix
+Subscription: Active
+Voice Control: Enabled
+Watch Time: 120 minutes
+
+MAIN PROGRAM
+
+Create a SmartTV object and perform the following operations:
+
+1. Display TV information
+2. Turn ON the TV
+3. Increase volume
+4. Change channel
+5. Connect to internet
+6. Open Netflix
+7. Adjust brightness
+8. Enable voice control
+9. Watch content for 60 minutes
+10. Display Smart TV status
+11. Turn OFF the TV
+
+ADDITIONAL CONDITIONS
+
+1. Use multiple inheritance.
+2. Use constructors to initialize the data members.
+3. Do not create simple get() and set() methods.
+4. Methods must perform actual operations.
+5. changeChannel() should not work when the TV is OFF.
+6. openApp() should not work when the internet is disconnected.
+7. brightness must always remain between 0 and 100.
+8. volume must never become negative.
+9. Use private/protected appropriately.
+10. Use at least one method that returns a value, such as checking whether the TV is currently ON or whether a subscription is active.
+
+INHERITANCE STRUCTURE
+
+```
+    Television          StreamingDevice
+          \                 /
+           \               /
+                SmartTV
+```
+
+CHALLENGE
+
+Add a method: void sleepTimer(int minutes)
+When the sleep timer is activated, display: Sleep timer set for 30 minutes.
+
+Also add: void cancelSleepTimer()
+to cancel the timer.
+
+GOAL
+
+Build a realistic Smart TV where the child class combines the functionality of two independent parent classes and adds its own functionality.
