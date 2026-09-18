@@ -1,0 +1,220 @@
+============================================================
+           1.  C++ PRACTICAL QUESTION
+        HYBRID INHERITANCE - LIBRARY SYSTEM
+============================================================
+
+Problem:
+
+Design a C++ program to implement a Library Management System using HYBRID INHERITANCE.
+
+The system should contain the following classes:
+
+                    Library
+                   /       \
+                  /         \
+               Book        Member
+                  \         /
+                   \       /
+                BorrowTransaction
+
+
+1. Create a class Library with:
+
+   Data Members:
+   - libraryName
+   - address
+   - totalBooks
+   - availableBooks
+
+   Member Functions:
+   - Constructor to initialize all data
+   - showLibraryInfo()
+
+2. Create a class Book that inherits virtually from Library.
+
+   Data Members:
+   - title
+   - author
+   - isbn
+   - pages
+   - category
+
+   Member Functions:
+   - Constructor
+   - showBook()
+
+
+3. Create a class Member that inherits virtually from Library.
+
+   Data Members:
+   - memberName
+   - memberId
+   - membershipType
+   - borrowedCount
+   - maxBorrowLimit
+
+   Member Functions:
+   - Constructor
+   - showMember()
+
+
+4. Create a class BorrowTransaction that inherits from
+   BOTH Book and Member.
+
+   Data Members:
+   - borrowDate
+   - dueDate
+   - returnDate
+   - finePerDay
+   - lateDays
+
+   Member Functions:
+
+   calculateFine()
+
+   The fine should be calculated as:
+
+   fine = lateDays * finePerDay
+
+
+   showTransaction()
+
+   This function should display:
+
+   -------- LIBRARY DETAILS --------
+   Library Name
+   Address
+   Total Books
+   Available Books
+
+   -------- BOOK DETAILS -----------
+   Title
+   Author
+   ISBN
+   Pages
+   Category
+
+   -------- MEMBER DETAILS ---------
+   Member Name
+   Member ID
+   Membership Type
+   Borrowed Count
+   Maximum Borrow Limit
+
+   -------- TRANSACTION ------------
+   Borrow Date
+   Due Date
+   Return Date
+   Late Days
+   Fine Per Day
+   Total Fine
+
+
+5. IMPORTANT REQUIREMENTS:
+
+   a) Use virtual inheritance for Book and Member.
+
+   b) Library should be initialized only once.
+
+   c) Use protected members/functions wherever appropriate.
+
+   d) BorrowTransaction should access information from Library, Book and Member.
+
+   e) Use constructor initialization lists.
+
+   f) Do NOT use global variables.
+
+   g) Create at least one object of BorrowTransaction in main().
+
+
+============================================================
+SAMPLE OBJECT
+============================================================
+
+BorrowTransaction bt(
+    "City Central Library",
+    "Ahmedabad",
+    5000,
+    3200,
+
+    "C++ Programming",
+    "Bjarne Stroustrup",
+    "ISBN-7865",
+    850,
+    "Programming",
+
+    "Harsh Patel",
+    101,
+    "Premium",
+    3,
+    5,
+
+    "12-09-2026",
+    "20-09-2026",
+    "24-09-2026",
+
+    20,
+    4
+);
+
+
+============================================================
+EXPECTED OUTPUT FORMAT
+============================================================
+
+Library Class Initialised...
+Book Class Initialised...
+Member Class Initialised...
+Borrow Transaction Class Initialised...
+
+-------- LIBRARY DETAILS --------
+
+Library Name : City Central Library
+Address : Ahmedabad
+Total Books : 5000
+Available Books : 3200
+
+-------- BOOK DETAILS --------
+
+Title : C++ Programming
+Author : Bjarne Stroustrup
+ISBN : ISBN-7865
+Pages : 850
+Category : Programming
+
+-------- MEMBER DETAILS --------
+
+Member Name : Harsh Patel
+Member ID : 101
+Membership Type : Premium
+Borrowed Count : 3
+Maximum Borrow Limit : 5
+
+-------- TRANSACTION --------
+
+Borrow Date : 12-09-2026
+Due Date : 20-09-2026
+Return Date : 24-09-2026
+Late Days : 4
+Fine Per Day : 20
+Total Fine : 80
+
+
+============================================================
+CONCEPTS BEING TESTED
+============================================================
+
+1. Class and Objects
+2. Constructors
+3. Constructor Initialization List
+4. Protected Members
+5. Single Inheritance
+6. Hierarchical Inheritance
+7. Multiple Inheritance
+8. Hybrid Inheritance
+9. Virtual Inheritance
+10. Diamond Problem
+11. Function Implementation
+12. Data Calculation
+13. Access Specifiers
+============================================================

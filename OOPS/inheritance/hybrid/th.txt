@@ -1,0 +1,297 @@
+============================================================
+              HYBRID INHERITANCE IN C++
+============================================================
+
+1. WHAT IS HYBRID INHERITANCE?
+------------------------------------------------------------
+
+Hybrid Inheritance is a combination of TWO OR MORE types of inheritance in a single program.
+
+It can combine:
+    - Single Inheritance
+    - Multiple Inheritance
+    - Multilevel Inheritance
+    - Hierarchical Inheritance
+
+
+Simple Definition: "Hybrid inheritance is a combination of different types of inheritance."
+
+============================================================
+2. SIMPLE DIAGRAM
+============================================================
+
+Example:
+
+                A
+               / \
+              /   \
+             B     C
+              \   /
+               \ /
+                D
+
+
+Here:
+
+A -> B       = Single Inheritance
+A -> C       = Single Inheritance
+A -> B + C   = Hierarchical Inheritance 
+B + C -> D   = Multiple Inheritance
+
+Therefore, the complete structure is a combination of different inheritance types.
+This is called HYBRID INHERITANCE.
+
+============================================================
+3. REAL-WORLD EXAMPLE
+============================================================
+
+Consider:
+
+                    Person
+                   /      \
+                  /        \
+             Student      Employee
+                  \        /
+                   \      /
+                    Teacher
+
+
+Person
+  |
+  +---- Student
+  |
+  +---- Employee
+
+Teacher inherits from both Student and Employee.
+
+Therefore:
+
+Person -> Student        = Hierarchical
+Person -> Employee      = Hierarchical
+
+Student + Employee
+        |
+      Teacher           = Multiple
+
+Combination = Hybrid Inheritance
+
+
+============================================================
+4. C++ EXAMPLE
+============================================================
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+public:
+    void showPerson()
+    {
+        cout << "I am a Person" << endl;
+    }
+};
+
+class Student : public Person
+{
+public:
+    void showStudent()
+    {
+        cout << "I am a Student" << endl;
+    }
+};
+
+class Employee : public Person
+{
+public:
+    void showEmployee()
+    {
+        cout << "I am an Employee" << endl;
+    }
+};
+
+class Teacher : public Student, public Employee
+{
+public:
+    void showTeacher()
+    {
+        cout << "I am a Teacher" << endl;
+    }
+};
+
+int main()
+{
+    Teacher t;
+
+    t.showStudent();
+    t.showEmployee();
+    t.showTeacher();
+
+    return 0;
+}
+
+
+OUTPUT:
+
+I am a Student
+I am an Employee
+I am a Teacher
+
+
+============================================================
+5. IMPORTANT PROBLEM: DIAMOND PROBLEM
+============================================================
+
+The above structure creates:
+
+                  Person
+                 /      \
+                /        \
+           Student      Employee
+                \        /
+                 \      /
+                  Teacher
+
+
+Teacher gets Person through TWO paths:
+
+Person -> Student -> Teacher
+Person -> Employee -> Teacher
+
+
+So Teacher contains TWO copies of Person.
+
+This creates ambiguity.
+
+
+============================================================
+6. SOLUTION: VIRTUAL INHERITANCE
+============================================================
+
+To avoid duplicate copies of the base class, we can use virtual inheritance.
+
+Syntax:
+
+class Student : virtual public Person
+{
+};
+
+class Employee : virtual public Person
+{
+};
+
+
+Complete Example:
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+public:
+    void showPerson()
+    {
+        cout << "I am a Person" << endl;
+    }
+};
+
+class Student : virtual public Person
+{
+public:
+    void showStudent()
+    {
+        cout << "I am a Student" << endl;
+    }
+};
+
+class Employee : virtual public Person
+{
+public:
+    void showEmployee()
+    {
+        cout << "I am an Employee" << endl;
+    }
+};
+
+class Teacher : public Student, public Employee
+{
+public:
+    void showTeacher()
+    {
+        cout << "I am a Teacher" << endl;
+    }
+};
+
+int main()
+{
+    Teacher t;
+
+    t.showPerson();
+    t.showStudent();
+    t.showEmployee();
+    t.showTeacher();
+
+    return 0;
+}
+
+
+OUTPUT:
+
+I am a Person
+I am a Student
+I am an Employee
+I am a Teacher
+
+
+============================================================
+7. KEY POINTS
+============================================================
+
+1. Hybrid inheritance = combination of two or more    inheritance types.
+
+2. It can contain:
+   - Single
+   - Multiple
+   - Multilevel
+   - Hierarchical inheritance
+
+3. Hybrid inheritance may create the Diamond Problem.
+
+4. Diamond Problem occurs when a class gets the same base class through multiple paths.
+
+5. Virtual inheritance is commonly used to solve the Diamond Problem.
+
+6. Keyword used: virtual
+
+
+============================================================
+8. ONE-LINE EXAM DEFINITION
+============================================================
+
+Hybrid inheritance is an inheritance structure that combines two or more types of inheritance in a single program.
+
+============================================================
+9. EASY WAY TO REMEMBER
+============================================================
+
+Hybrid = MIX
+
+Different inheritance types
+          +
+       Combined
+          =
+   Hybrid Inheritance
+
+
+Diagram:
+
+        A
+       / \
+      B   C
+       \ /
+        D
+
+Hierarchical + Multiple
+          =
+       HYBRID
+============================================================
