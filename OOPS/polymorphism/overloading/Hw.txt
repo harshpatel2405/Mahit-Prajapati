@@ -1,0 +1,39 @@
+<============================================================================>
+Method overloading
+------------------
+1. Create a Calculator class that uses method overloading to calculate the total price of products.
+
+Implement overloaded calculate() methods:
+
+calculate(int price, int quantity) → return price × quantity
+calculate(int price, int quantity, double discount) → apply the discount and return the final price
+    calculate(int price1, int quantity1, int price2, int quantity2) → calculate the total cost of two different products
+    calculate(double price, int quantity, double tax) → calculate the price after adding tax
+    
+    In main(), create a Calculator object and call all four overloaded methods with suitable values.
+    
+    Print the result of each calculation.
+<============================================================================>
+Constructor Overloading
+-----------------------
+2. Create a class called BankAccount that uses constructor overloading.
+
+Create these constructors:
+
+BankAccount()
+        Set account number to 0
+        Set account holder name to "Unknown"
+        Set balance to 0
+    BankAccount(int accountNumber, string name)
+    Set the account number and name
+    Set balance to 1000
+    BankAccount(int accountNumber, string name, double balance)
+        Set all three values from the parameters
+
+        In main():
+
+    Create 3 objects, one using each constructor.
+    Display the details of all three bank accounts.
+    
+    Bonus: Add a display() method to print the account details neatly.
+<============================================================================>

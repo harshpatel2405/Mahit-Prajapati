@@ -1,0 +1,24 @@
+Polymorphism 
+------------
+one things has many forms 
+
+Home -> Family Member 
+College -> Student
+Friends -> Friend 
+Bus -> Traveller
+
+You are ONE -> but can do many things / can perform many operations 
+
+1. Overloading -- same class
+    a. Method Overloading
+    b. Constructor Overloading
+    C. Operator Overloading
+        
+    // object with object 
+    1. Addition of objects (addition of any data members of objects)
+
+    // object with value
+    2. addition of object with a number (any data member + number )
+
+2. Overrding   -- different class
+    a. Method Overriding 

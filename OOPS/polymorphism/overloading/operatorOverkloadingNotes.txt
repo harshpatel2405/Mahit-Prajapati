@@ -1,0 +1,604 @@
+C++ OPERATOR OVERLOADING
+========================
+
+1. WHAT IS OPERATOR OVERLOADING?
+-------------------------------
+Operator overloading means giving a special meaning to an operator when it is used with objects.
+
+Example: n1 + n2
+
+Here n1 and n2 are objects.
+
+Normally + works with numbers: 10 + 20
+
+With operator overloading, + can work with objects.
+
+2. BASIC SYNTAX
+---------------
+return_type operator symbol(ClassName object)
+{
+    // code
+}
+
+
+3. SIMPLE EXAMPLE
+-----------------
+
+class Number
+{
+public:
+    int a;
+
+    int operator+(Number n2)
+    {
+        return this->a + n2.a;
+    }
+};
+
+int main()
+{
+    Number n1, n2;
+
+    n1.a = 10;
+    n2.a = 20;
+
+    int result = n1 + n2;
+
+    cout << result;
+}
+
+
+4. WHAT HAPPENS INTERNALLY?
+---------------------------
+
+When we write:
+
+n1 + n2;
+
+C++ understands it approximately as:
+
+n1.operator+(n2);
+
+
+5. THIS POINTER
+---------------
+
+Example:
+
+int operator+(Number n2)
+{
+    return this->a + n2.a;
+}
+
+Here:
+this->a = value of first object
+n2.a = value of second object
+
+Example:
+
+n1.a = 10;
+n2.a = 20;
+
+n1 + n2
+
+means:
+
+10 + 20
+
+Result = 30
+
+
+6. OBJECT + OBJECT -> INT
+-------------------------
+
+Example:
+
+int operator+(Number n2)
+{
+    return this->a + n2.a;
+}
+
+Usage:
+
+int result = n1 + n2;
+
+Here:
+
+Object + Object -> int
+
+
+7. OBJECT + OBJECT -> OBJECT
+----------------------------
+
+Operator can also return an object.
+
+Example:
+
+Number operator+(Number n2)
+{
+    Number temp;
+
+    temp.a = this->a + n2.a;
+
+    return temp;
+}
+
+Usage:
+
+Number n3 = n1 + n2;
+
+Here:
+
+Object + Object -> Object
+
+
+8. SUBTRACTION
+--------------
+
+We can overload - also.
+
+Example:
+
+Number operator-(Number n2)
+{
+    Number temp;
+
+    temp.a = this->a - n2.a;
+
+    return temp;
+}
+
+Usage:
+
+Number n3 = n1 - n2;
+
+
+9. MULTIPLICATION
+-----------------
+
+Number operator*(Number n2)
+{
+    Number temp;
+
+    temp.a = this->a * n2.a;
+
+    return temp;
+}
+
+
+10. DIVISION
+------------
+
+Number operator/(Number n2)
+{
+    Number temp;
+
+    temp.a = this->a / n2.a;
+
+    return temp;
+}
+
+
+11. MODULUS
+-----------
+
+Number operator%(Number n2)
+{
+    Number temp;
+
+    temp.a = this->a % n2.a;
+
+    return temp;
+}
+
+
+12. COMMON ARITHMETIC OPERATORS
+-------------------------------
+
++    Addition
+-    Subtraction
+*    Multiplication
+/    Division
+%    Modulus
+
+
+13. COMPARISON OPERATORS
+------------------------
+
+We can also overload:
+
+==
+!=
+>
+<
+>=
+<=
+
+Example:
+
+bool operator==(Number n2)
+{
+    return this->a == n2.a;
+}
+
+Usage:
+
+if(n1 == n2)
+{
+    cout << "Equal";
+}
+
+
+14. GREATER THAN
+----------------
+
+bool operator>(Number n2)
+{
+    return this->a > n2.a;
+}
+
+Usage:
+
+if(n1 > n2)
+{
+    cout << "n1 is greater";
+}
+
+
+15. UNARY OPERATORS
+-------------------
+
+Unary operator works with ONE operand.
+
+Examples:
+
+++
+--
+-
+!
+
+
+16. PREFIX ++
+-------------
+
+void operator++()
+{
+    a++;
+}
+
+Usage:
+
+++n1;
+
+
+17. POSTFIX ++
+--------------
+
+void operator++(int)
+{
+    a++;
+}
+
+Usage:
+
+n1++;
+
+
+18. PREFIX AND POSTFIX
+----------------------
+
+++n1;    -> Prefix
+
+n1++;    -> Postfix
+
+
+19. DECREMENT --
+---------------
+
+void operator--()
+{
+    a--;
+}
+
+Usage:
+
+--n1;
+
+
+20. UNARY MINUS
+---------------
+
+Number operator-()
+{
+    Number temp;
+
+    temp.a = -this->a;
+
+    return temp;
+}
+
+Usage:
+
+Number n2 = -n1;
+
+
+21. BINARY OPERATOR
+-------------------
+
+Binary operator works with TWO operands.
+
+Example:
+
+n1 + n2
+
+Operands:
+
+n1 -> first object
+n2 -> second object
+
+Example function:
+
+Number operator+(Number n2)
+
+
+22. MEMBER FUNCTION
+-------------------
+
+Example:
+
+class Number
+{
+public:
+
+    Number operator+(Number n2)
+    {
+        Number temp;
+
+        temp.a = this->a + n2.a;
+
+        return temp;
+    }
+};
+
+
+23. FRIEND FUNCTION
+-------------------
+
+Operator overloading can also be done using a friend function.
+
+Example:
+
+class Number
+{
+public:
+    int a;
+
+    friend Number operator+(Number n1, Number n2);
+};
+
+Number operator+(Number n1, Number n2)
+{
+    Number temp;
+
+    temp.a = n1.a + n2.a;
+
+    return temp;
+}
+
+
+24. IMPORTANT RULE
+------------------
+
+You CANNOT overload a function only by changing its return type.
+
+WRONG:
+
+int operator+(Number n);
+
+Number operator+(Number n);
+
+This is NOT allowed.
+
+Reason:
+
+Both have the same:
+
+operator+(Number)
+
+C++ does not use return type to decide function overloading.
+
+
+25. OPERATORS THAT CANNOT BE OVERLOADED
+---------------------------------------
+
+These operators cannot be overloaded:
+
+::
+.
+.*
+?:
+sizeof
+
+
+26. COMMON OPERATORS THAT CAN BE OVERLOADED
+-------------------------------------------
+
++
+-
+*
+/
+%
+==
+!=
+>
+<
+>=
+<=
+++
+--
+=
++=
+-=
+*=
+/=
+[]
+()
+->
+
+
+27. OPERATOR OVERLOADING VS METHOD OVERLOADING
+----------------------------------------------
+
+METHOD OVERLOADING:
+
+Same function name
+Different parameters
+
+Example:
+
+void add(int a);
+
+void add(int a, int b);
+
+void add(int a, int b, int c);
+
+
+OPERATOR OVERLOADING:
+
+Give special meaning to an operator for objects.
+
+Example:
+
+Number operator+(Number n);
+
+
+28. CONSTRUCTOR OVERLOADING VS OPERATOR OVERLOADING
+---------------------------------------------------
+
+CONSTRUCTOR OVERLOADING:
+
+Transaction(int id);
+
+Transaction(int id, string type);
+
+Transaction(int id, string type, bool status);
+
+
+OPERATOR OVERLOADING:
+
+Number operator+(Number n);
+
+Number operator-(Number n);
+
+Number operator*(Number n);
+
+
+29. IMPORTANT EXAMPLE
+---------------------
+
+class Number
+{
+public:
+    int a;
+
+    int operator+(Number n2)
+    {
+        return this->a + n2.a;
+    }
+
+    Number operator-(Number n2)
+    {
+        Number temp;
+
+        temp.a = this->a - n2.a;
+
+        return temp;
+    }
+};
+
+Here:
+
+n1 + n2
+-> Object + Object -> int
+
+n1 - n2
+-> Object - Object -> Object
+
+
+30. EASY WAY TO REMEMBER
+------------------------
+
+n1 + n2
+
+        |
+        v
+
+n1.operator+(n2)
+
+        |
+        v
+
+operator function runs
+
+        |
+        v
+
+result is returned
+
+
+31. PRACTICE QUESTIONS
+----------------------
+
+EASY:
+
+1. Create a Number class and overload + to add two objects.
+
+2. Create a Number class and overload - to subtract two objects.
+
+3. Create a Number class and overload * to multiply two objects.
+
+
+MEDIUM:
+
+4. Create a Student class with:
+   name
+   marks
+
+   Overload + to add marks of two students.
+
+
+5. Create a Money class with:
+   rupees
+   paise
+
+   Overload + and -.
+
+
+6. Create a Distance class with:
+   feet
+   inches
+
+   Overload + to add two distance objects.
+
+
+32. MOST IMPORTANT TOPICS
+-------------------------
+
+1. operator+()
+2. operator-()
+3. Object + Object
+4. Object - Object
+5. Returning int
+6. Returning Object
+7. Comparison operators
+8. Unary operators
+9. Prefix and postfix ++
+10. Friend function
+11. Operators that cannot be overloaded
+
+
+33. ONE-LINE DEFINITION
+----------------------
+
+Operator overloading allows us to define how operators work with
+objects of our own classes.
