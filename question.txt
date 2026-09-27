@@ -1,0 +1,436 @@
+============================================================
+        C++ ARRAY, POINTER & STRING PRACTICE
+              MEDIUM → HARD LEVEL
+============================================================
+
+RULES:
+- Do not use STL.
+- Do not use vector, map, set, etc.
+- Do not use sorting unless specifically mentioned.
+- Use functions wherever appropriate.
+- Focus on problem solving, not just syntax.
+
+
+-------------------- ARRAY QUESTIONS --------------------
+
+1. SECOND LARGEST ELEMENT
+
+Accept n integers and find the second largest DISTINCT
+element in the array.
+
+Example:
+Input:
+7
+10 50 20 50 40 30 10
+
+Output:
+Second Largest = 40
+
+Conditions:
+- Do not sort the array.
+- Duplicate values should not be considered separately.
+- Handle the case where a second distinct element does not exist.
+
+
+2. MOVE ZEROES TO END
+
+Given an integer array, move all zeroes to the end while
+maintaining the original order of non-zero elements.
+
+Example:
+Input:
+0 5 0 3 8 0 2
+
+Output:
+5 3 8 2 0 0 0
+
+Conditions:
+- Do not create another array.
+- Do not sort the array.
+- Preserve the order of non-zero elements.
+
+
+3. REMOVE DUPLICATES
+
+Remove duplicate elements from an array.
+
+Example:
+Input:
+10 20 10 30 20 40 30
+
+Output:
+10 20 30 40
+
+Conditions:
+- Do not use set or vector.
+- Do not use another array.
+- Modify the original array.
+
+
+4. ARRAY ROTATION
+
+Rotate an array to the RIGHT by k positions.
+
+Example:
+Input:
+1 2 3 4 5
+
+k = 2
+
+Output:
+4 5 1 2 3
+
+Conditions:
+- Do not create another array.
+- k can be greater than n.
+
+
+5. ARRAY COMPRESSION
+
+Remove consecutive duplicate elements from an array.
+
+Example:
+Input:
+1 1 1 2 2 3 3 3 4 5 5
+
+Output:
+1 2 3 4 5
+
+Conditions:
+- Do not sort the array.
+- Do not use another array.
+
+
+6. FIND MISSING NUMBER
+
+An array contains numbers from 1 to n, but exactly one
+number is missing.
+
+Find the missing number.
+
+Example:
+Input:
+1 2 3 5 6
+
+Output:
+Missing = 4
+
+Conditions:
+- Do not sort.
+- Do not use another array.
+- Use a function.
+
+
+-------------------- POINTER QUESTIONS --------------------
+
+7. REVERSE ARRAY USING POINTERS
+
+Write a program to reverse an array using pointers.
+
+Example:
+Input:
+1 2 3 4 5
+
+Output:
+5 4 3 2 1
+
+Condition:
+- Use pointers for the reversing logic.
+
+
+8. FIND MINIMUM AND MAXIMUM USING POINTERS
+
+Create a function:
+
+void findMinMax(int *arr, int n)
+
+The function should find and display the minimum and
+maximum elements.
+
+Example:
+Input:
+12 5 89 23 4 56
+
+Output:
+Maximum = 89
+Minimum = 4
+
+Condition:
+- Access the array using pointers inside the function.
+
+
+9. SWAP ADJACENT ELEMENTS USING POINTERS
+
+Create a function:
+
+void swapPairs(int *arr, int n)
+
+Swap every pair of adjacent elements.
+
+Example:
+Input:
+10 20 30 40 50 60
+
+Output:
+20 10 40 30 60 50
+
+Condition:
+- Use pointers.
+- If the array size is odd, leave the last element unchanged.
+
+
+10. DYNAMIC ARRAY
+
+Take the size from the user and dynamically create an
+integer array using new.
+
+Accept the values and find:
+
+- Sum
+- Average
+- Maximum
+- Minimum
+
+Finally release the allocated memory properly.
+
+Example:
+Enter size: 5
+
+Enter elements:
+10 20 30 40 50
+
+Output:
+Sum = 150
+Average = 30
+Maximum = 50
+Minimum = 10
+
+Conditions:
+- Use new.
+- Use delete[].
+- Do not use vector.
+
+
+-------------------- STRING QUESTIONS --------------------
+
+11. REVERSE WORDS
+
+Accept a sentence and reverse the order of the words,
+but do not reverse the characters inside each word.
+
+Example:
+Input:
+C++ is very powerful
+
+Output:
+powerful very is C++
+
+
+12. FIND LONGEST WORD
+
+Accept a sentence and find the longest word.
+
+Example:
+Input:
+C++ programming is interesting
+
+Output:
+Longest Word = interesting
+
+Conditions:
+- Handle multiple spaces.
+- Do not use STL containers.
+
+
+13. CHARACTER FREQUENCY
+
+Accept a sentence and display the frequency of every
+character.
+
+Example:
+Input:
+hello world
+
+Output:
+h -> 1
+e -> 1
+l -> 3
+o -> 2
+w -> 1
+r -> 1
+d -> 1
+
+Conditions:
+- Ignore spaces.
+- Treat uppercase and lowercase letters as the same.
+- Do not use map.
+
+
+14. STRING COMPRESSION
+
+Compress consecutive repeated characters.
+
+Example:
+Input:
+aaabbccccdaa
+
+Output:
+a3b2c4d1a2
+
+Another Example:
+Input:
+xxxyzzzz
+
+Output:
+x3y1z4
+
+Condition:
+- Do not use map.
+
+
+-------------------- COMBINED QUESTIONS --------------------
+
+15. ARRAY ANALYZER
+
+Create a function:
+
+void analyzeArray(int *arr, int n)
+
+The function must display:
+
+- Original Array
+- Maximum
+- Minimum
+- Sum
+- Average
+- Number of Even Elements
+- Number of Odd Elements
+- Number of Positive Elements
+- Number of Negative Elements
+
+Example:
+Input:
+10 -5 20 7 -2
+
+Output:
+Original Array: 10 -5 20 7 -2
+Maximum = 20
+Minimum = -5
+Sum = 30
+Average = 6
+Even = 3
+Odd = 2
+Positive = 3
+Negative = 2
+
+Conditions:
+- Function must receive the array using a pointer.
+- No global variables.
+- Do not use STL.
+
+
+16. STRING ANALYZER USING POINTER
+
+Create a function:
+
+void analyzeString(char *str)
+
+The function should find:
+
+- Total characters
+- Number of alphabets
+- Number of digits
+- Number of spaces
+- Number of vowels
+- Number of consonants
+
+Example:
+Input:
+Hello World 123
+
+Output:
+Characters = 15
+Alphabets = 10
+Digits = 3
+Spaces = 2
+Vowels = 3
+Consonants = 7
+
+Conditions:
+- Use a character pointer to traverse the string.
+- Do not use string for the main processing.
+
+
+17. STUDENT MARKS ANALYZER
+
+Create a program that stores marks of n students
+in an integer array.
+
+Create separate functions:
+
+void inputMarks(int *marks, int n);
+
+void displayMarks(int *marks, int n);
+
+int findHighest(int *marks, int n);
+
+int findLowest(int *marks, int n);
+
+double calculateAverage(int *marks, int n);
+
+int countPassed(int *marks, int n);
+
+int countFailed(int *marks, int n);
+
+Rules:
+- Marks must be between 0 and 100.
+- Use dynamic memory.
+- Use pointers for array access.
+- Do not use STL.
+- Do not use global variables.
+- Do not sort the array.
+
+Example:
+Enter number of students: 5
+
+Enter marks:
+78 45 91 32 67
+
+Output:
+Highest = 91
+Lowest = 32
+Average = 62.6
+Passed = 4
+Failed = 1
+
+
+============================================================
+                    END OF QUESTIONS
+============================================================
+Array
+Searching
+Sorting
+Two pointer
+Sliding window
+Prefix sum
+
+Recursion 
+Factorial
+Fibonacci
+Sum
+Reverse
+Binary recursion
+Backtracking basics
+
+string
+------
+palindrome
+anagram
+character frequency
+duplicate characters
+word frequency
+longest word
+string compression
+reverse words
+remove duplicates
+substring problems
