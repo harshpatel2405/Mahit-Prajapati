@@ -1,0 +1,10 @@
+Abstraction
+-----------
+privacy and security 
+
+1. Abstract class 
+-> class which has min 1 Pure Virtual Method 
+-> Object of abstract class cannot be created 
+
+--> Parent class will not have any implementation of method 
+---> child class must implement pure virtual method

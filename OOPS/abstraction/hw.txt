@@ -1,0 +1,106 @@
+1. # C++ Advanced OOP Challenge — Smart Autonomous Delivery Robot
+
+**Difficulty:** Complex / High
+**Expected Code Length:** 80–100 lines
+**Concepts:** Multiple Inheritance, Abstraction, Method Overriding, Runtime Polymorphism, Encapsulation
+
+## Problem Statement
+
+Develop a **Smart Autonomous Delivery Robot System** that can deliver packages, navigate between locations, and calculate delivery costs based on distance and package weight.
+
+The system must use multiple inheritance to combine navigation and delivery capabilities into a single autonomous robot.
+
+## Requirements
+
+### 1. Abstract Class: `Navigation`
+
+Create an abstract class containing:
+
+* A protected data member `currentLocation`.
+* A pure virtual function `navigate(string destination)`.
+* A pure virtual function `calculateDistance(string destination)`.
+* A virtual destructor.
+
+### 2. Abstract Class: `Delivery`
+
+Create another abstract class containing:
+
+* A protected data member `packageWeight`.
+* A pure virtual function `calculateDeliveryCost()`.
+* A pure virtual function `deliverPackage()`.
+* A virtual destructor.
+
+### 3. Derived Class: `AutonomousRobot`
+
+Create a class that inherits publicly from both `Navigation` and `Delivery`.
+
+It must contain:
+
+* Private data members `robotId` and `batteryLevel`.
+
+* A parameterized constructor to initialize all required data.
+
+* Override `navigate()` to display the destination and update the current location.
+
+* Override `calculateDistance()` to return the distance to a destination. Use a simple predefined mapping of destinations to distances.
+
+* Override `calculateDeliveryCost()` using the formula:
+
+  `Delivery Cost = (Distance × 10) + (Package Weight × 20)`
+
+* Override `deliverPackage()` to display the robot ID, package weight, delivery cost, and remaining battery level.
+
+* Reduce the battery by 5% for every delivery and prevent delivery when the battery is insufficient.
+
+### 4. Implement `main()`
+
+* Create at least two `AutonomousRobot` objects with different IDs, starting locations, battery levels, and package weights.
+* Store their addresses in an array of `AutonomousRobot` pointers.
+* Use a loop to navigate to a destination and deliver each package.
+* Display the total delivery cost for successful deliveries.
+* Use appropriate validation to prevent invalid package weights and battery levels.
+
+### Sample Output
+
+```text
+===== AUTONOMOUS DELIVERY SYSTEM =====
+
+Robot ID: ROB101
+Destination: Science City
+Distance: 8 km
+Package Weight: 3 kg
+Delivery Cost: Rs. 140
+Battery Remaining: 75%
+Status: Delivery Successful
+
+Robot ID: ROB102
+Destination: Satellite
+Distance: 12 km
+Package Weight: 5 kg
+Delivery Cost: Rs. 220
+Battery Remaining: 40%
+Status: Delivery Successful
+
+Total Delivery Cost: Rs. 360
+```
+
+*The distances and battery values are illustrative. Your implementation may use different predefined values.*
+
+## Constraints
+
+1. Both `Navigation` and `Delivery` must be abstract classes.
+2. `AutonomousRobot` must use **multiple inheritance**.
+3. All pure virtual functions must be implemented using method overriding.
+4. Use the `override` keyword wherever appropriate.
+5. Keep `robotId` and `batteryLevel` private.
+6. Avoid duplicating delivery-cost calculation logic.
+7. Reject invalid input and prevent delivery if the battery is insufficient.
+8. Do not use `if-else` or `switch` to identify the robot's type.
+
+## Bonus Challenge
+
+Create a third abstract class called `BatteryManagement` with a pure virtual function `rechargeBattery()`. Make `AutonomousRobot` inherit from all three abstract classes.
+
+The robot should recharge its battery without exceeding 100%, and the existing delivery loop should continue to work without modification.
+
+**Goal:** Write a compact, well-structured C++ program that demonstrates multiple inheritance, abstraction, method overriding, and runtime polymorphism in a realistic application.

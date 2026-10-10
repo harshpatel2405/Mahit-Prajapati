@@ -68,3 +68,14 @@ Constructor => a special method
             => gets called as soon as the object is created 
 
 Static => 
+
+Exception Handling 
+Class Templates 
+STL -- basic to mid
+memory management
+file handling 
+namespace and header files
+Threads 
+Smart Pointers
+move semantics
+modern c++
