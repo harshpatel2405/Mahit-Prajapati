@@ -1,0 +1,8 @@
+Exception 
+---------
+10 / 0 -> 
+
+Run time error 
+
+Exception Handling
+Custom Exceptions   what , noexcept 
