@@ -1,0 +1,30 @@
+Method	         Purpose	                           Example
+------           -------                               --------
+push_back(x)     Add element at the end                l.push_back(50);
+push_front(x)    Add element at the beginning          l.push_front(5);
+pop_back()       Remove last element                   l.pop_back();
+pop_front()      Remove first element                  l.pop_front();
+front()          Access first element                  l.front()
+back()           Access last element                   l.back()
+size()           Return number of elements             l.size()
+empty()          Check if list is empty                l.empty()
+clear()          Remove all elements                   l.clear();
+insert()         Insert before an iterator position    l.insert(it, 25);
+erase()          Remove an element or range            l.erase(it);
+remove(x)        Remove all elements equal to x        l.remove(20);
+sort()           Sort the list                         l.sort();
+reverse()        Reverse the list                      l.reverse();
+unique()         Remove consecutive duplicates         l.unique();
+merge()          Merge two sorted lists                1.merge(l2);
+splice()         Transfer elements from another list   1.splice(pos, l2);
+
+
+auto i = v.begin()
+v.back()
+
+*i
+
+ for (list<int>::iterator it = l.begin(); it != l.end(); ++it)
+    {
+        cout << *it << " ";
+    }
