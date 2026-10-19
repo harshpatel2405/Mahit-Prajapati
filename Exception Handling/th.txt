@@ -6,3 +6,18 @@ Run time error
 
 Exception Handling
 Custom Exceptions   what , noexcept 
+
+Exception class            Purpose
+---------------            -------
+std::exception             Base class for many standard exceptions.
+std::runtime_error         Errors detected during program execution.
+std::logic_error           Errors related to program logic or invalid usage.
+std::invalid_argument      An argument has an invalid value.
+std::out_of_range          An index or value is outside an allowed range.
+std::length_error          An operation exceeds a permitted length.
+std::overflow_error        An operation exceeds a representable range when the relevant operation reports this exception.
+std::underflow_error       An operation falls below a representable range when reported by that operation.
+std::bad_alloc             A memory allocation request fails.
+std::bad_cast              A reference dynamic_cast fails.
+std::bad_typeid            A typeid operation on a null polymorphic pointer throws an exception.
+std::bad_exception         A legacy exception-related type, mainly of historical relevance.
