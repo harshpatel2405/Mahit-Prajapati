@@ -1,0 +1,4 @@
+ofstream -- write (ios:app ,ios::out)
+ifstream -- read (ios::in)
+
+fstream -- read and write (ios::binary| ios::app | ios::in)
